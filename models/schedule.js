@@ -2,6 +2,9 @@ var mongoose = require("mongoose");
 
 var scheduleSchema = mongoose.Schema({
 
+		avatar: {
+			type: String
+		},
 		speaker: {
 			type: String,
 			required: true
@@ -11,7 +14,7 @@ var scheduleSchema = mongoose.Schema({
 			required: true
 		},
 		date: {
-			type: Date,
+			type: String,
 			required: true
 		},
 });
