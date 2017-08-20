@@ -1,4 +1,6 @@
 var mongoose = require("mongoose");
+const moment = require("moment")
+
 
 var scheduleSchema = mongoose.Schema({
 
@@ -14,10 +16,17 @@ var scheduleSchema = mongoose.Schema({
 			required: true
 		},
 		date: {
-			type: String,
+			type: Date,
 			required: true
 		},
 });
+
+
+
+scheduleSchema.methods.dateForm = function dateForm(){
+	return moment(this.date).format("ddd MMM Do YYYY")
+}
+
 
 
 

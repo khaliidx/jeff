@@ -1,10 +1,16 @@
 
 var mongoose = require("mongoose");
+const schedule = require("./schedule")
 
 var userSchema = mongoose.Schema({
 
 		
 		username: {
+			type: String,
+			unique: true,
+			required: true
+		},
+		avatar: {
 			type: String,
 			required: true
 		},
